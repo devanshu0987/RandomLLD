@@ -1,0 +1,77 @@
+{
+  "CREDIT_CARD_BILL_PAYMENT": {
+    "relevance": [
+      "UPI",
+      "NETBANKING",
+      "DEBIT_CARD"
+    ],
+    "rules": {
+      "CREDIT_CARD": {
+        "isAllowed": false,
+        "limit": 0
+      },
+      "DEBIT_CARD": {
+        "isAllowed": true,
+        "limit": 200000
+      },
+      "NETBANKING": {
+        "isAllowed": true,
+        "limit": 200000
+      },
+      "UPI": {
+        "isAllowed": true,
+        "limit": 200000
+      }
+    }
+  },
+  "INVESTMENT": {
+    "relevance": [
+      "UPI",
+      "NETBANKING",
+      "DEBIT_CARD"
+    ],
+    "rules": {
+      "CREDIT_CARD": {
+        "isAllowed": false,
+        "limit": 0
+      },
+      "DEBIT_CARD": {
+        "isAllowed": true,
+        "limit": 150000
+      },
+      "NETBANKING": {
+        "isAllowed": true,
+        "limit": 150000
+      },
+      "UPI": {
+        "isAllowed": true,
+        "limit": 100000
+      }
+    }
+  },
+  "COMMERCE": {
+    "relevance": [
+      "CREDIT_CARD",
+      "UPI",
+      "DEBIT_CARD"
+    ],
+    "rules": {
+      "CREDIT_CARD": {
+        "isAllowed": true,
+        "limit": 250000
+      },
+      "DEBIT_CARD": {
+        "isAllowed": true,
+        "limit": 200000
+      },
+      "NETBANKING": {
+        "isAllowed": false,
+        "limit": 0
+      },
+      "UPI": {
+        "isAllowed": true,
+        "limit": 100000
+      }
+    }
+  }
+}
