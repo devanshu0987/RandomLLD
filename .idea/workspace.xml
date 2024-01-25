@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc11492-8e5e-4fbc-bf77-14f5db011111" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/EqualityOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/IOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/InOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/ReflectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/leetcode/Solution/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/leetcode/Solution/TreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/KvStoreWithUndo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/PutOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/code/kvstore/KvStoreWithUndoTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/leetcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/leetcode/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +69,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/devansm/source/repos/RandomLLD"
+    "last_opened_file_path": "C:/Users/devansm/source/repos/RandomLLD",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "coverage"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -88,47 +83,8 @@
       <recent name="org.jupiter.query" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.jupiter.query.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.cred.paymentrecommendation.Main" />
-      <module name="RandomLLD.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.cred.paymentrecommendation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="org.jupiter.query.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.jupiter.query.Main" />
-      <module name="RandomLLD.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.jupiter.query.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="org.leetcode.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.leetcode.Main" />
-      <module name="RandomLLD.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.leetcode.Solution.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests in 'org.coinbase.bank.model'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.KvStoreWithUndoTests">
+    <configuration name="KvStoreWithUndoTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -141,7 +97,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.coinbase.bank.model.*&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -152,7 +108,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'org.cred.paymentrecommendation.service'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="KvStoreWithUndoTests.testMultipleRedo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -165,7 +121,79 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.cred.paymentrecommendation.service.*&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testMultipleRedo&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KvStoreWithUndoTests.testRedoMoreThanOperations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testRedoMoreThanOperations&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KvStoreWithUndoTests.testUndoMoreThanOperations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testUndoMoreThanOperations&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KvStoreWithUndoTests.testUndoRedoInLoop" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testUndoRedoInLoop&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.jupiter.query.Main" />
-        <item itemvalue="Application.org.leetcode.Main" />
-        <item itemvalue="Gradle.Tests in 'org.cred.paymentrecommendation.service'" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.Tests in 'org.coinbase.bank.model'" />
+        <item itemvalue="Gradle.KvStoreWithUndoTests" />
+        <item itemvalue="Gradle.KvStoreWithUndoTests.testRedoMoreThanOperations" />
+        <item itemvalue="Gradle.KvStoreWithUndoTests.testUndoMoreThanOperations" />
+        <item itemvalue="Gradle.KvStoreWithUndoTests.testUndoRedoInLoop" />
+        <item itemvalue="Gradle.KvStoreWithUndoTests.testMultipleRedo" />
       </list>
     </recent_temporary>
   </component>
@@ -207,5 +235,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RandomLLD$KvStoreWithUndoTests.ic" NAME="KvStoreWithUndoTests Coverage Results" MODIFIED="1706202324857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

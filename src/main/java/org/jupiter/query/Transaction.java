@@ -6,6 +6,8 @@ public class Transaction {
     public String id;
     public LocalDateTime timestamp;
     public Integer amount;
+    public String Currency;
+    public String userId;
 
     public Transaction(String id, LocalDateTime timestamp, Integer amount) {
         this.id = id;
