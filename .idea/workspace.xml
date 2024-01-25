@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc11492-8e5e-4fbc-bf77-14f5db011111" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/KvStoreWithUndo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/PutOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/code/kvstore/KvStoreWithUndoTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/KvStoreWithTransactions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/coda/kvstore/KvStoreWithTransactionsV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/code/kvstore/KvStoreWithTransactionsTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/code/kvstore/KvStoreWithTransactionsV2Tests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jupiter/query/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +80,13 @@
       <recent name="C:\Users\devansm\source\repos\RandomLLD\src\main\java\org\cred" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.code.kvstore" />
+      <recent name="org.coda.kvstore" />
       <recent name="org.jupiter.query" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.KvStoreWithUndoTests">
-    <configuration name="KvStoreWithUndoTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.KvStoreWithTransactionsV2Tests">
+    <configuration name="KvStoreWithTransactionsTests.testMultipleBegin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +99,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithTransactionsTests.testMultipleBegin&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -108,7 +110,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="KvStoreWithUndoTests.testMultipleRedo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="KvStoreWithTransactionsV2Tests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +123,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testMultipleRedo&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithTransactionsV2Tests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +134,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="KvStoreWithUndoTests.testRedoMoreThanOperations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="KvStoreWithTransactionsV2Tests.testKvStore" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +147,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testRedoMoreThanOperations&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithTransactionsV2Tests.testKvStore&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +158,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="KvStoreWithUndoTests.testUndoMoreThanOperations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="KvStoreWithTransactionsV2Tests.testKvStoreSingleTransaction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +171,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testUndoMoreThanOperations&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithTransactionsV2Tests.testKvStoreSingleTransaction&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +182,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="KvStoreWithUndoTests.testUndoRedoInLoop" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="KvStoreWithTransactionsV2Tests.testMultipleBegin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +195,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.code.kvstore.KvStoreWithUndoTests.testUndoRedoInLoop&quot;" />
+            <option value="&quot;org.code.kvstore.KvStoreWithTransactionsV2Tests.testMultipleBegin&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.KvStoreWithUndoTests" />
-        <item itemvalue="Gradle.KvStoreWithUndoTests.testRedoMoreThanOperations" />
-        <item itemvalue="Gradle.KvStoreWithUndoTests.testUndoMoreThanOperations" />
-        <item itemvalue="Gradle.KvStoreWithUndoTests.testUndoRedoInLoop" />
-        <item itemvalue="Gradle.KvStoreWithUndoTests.testMultipleRedo" />
+        <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests" />
+        <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testMultipleBegin" />
+        <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testKvStoreSingleTransaction" />
+        <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testKvStore" />
+        <item itemvalue="Gradle.KvStoreWithTransactionsTests.testMultipleBegin" />
       </list>
     </recent_temporary>
   </component>
@@ -238,5 +240,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RandomLLD$KvStoreWithUndoTests.ic" NAME="KvStoreWithUndoTests Coverage Results" MODIFIED="1706202324857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/RandomLLD$KvStoreWithTransactionsV2Tests.ic" NAME="KvStoreWithTransactionsV2Tests Coverage Results" MODIFIED="1706207551959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
