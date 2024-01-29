@@ -1,9 +1,6 @@
 package org.leetcode.Solution;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 public class Solution {
     public Solution() {
@@ -219,6 +216,148 @@ public class Solution {
     public int pseudoPalindromicPaths(TreeNode root) {
         int[] state = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
         return solveTree(root, state, 0);
+    }
+
+    public int longestCommonSubsequence(String text1, String text2) {
+        // abcde VS ace
+        int[][] dp = new int[text1.length() + 1][text2.length() + 1];
+        for (int i = 1; i < dp.length; i++) {
+            for (int j = 1; j < dp[0].length; j++) {
+                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
+                    dp[i][j] = 1 + dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[text1.length()][text2.length()];
+    }
+
+    int solveFindPaths(int m, int n, int row, int col, int moveLeft, int[][][] dp) {
+        int MOD = (int) (1e9 + 7);
+        if (moveLeft < 0)
+            return 0;
+        if (row < 0 || row >= m || col < 0 || col >= n) {
+            // we are outside the boundary
+            return 1;
+        }
+        if (dp[row][col][moveLeft] != -1)
+            return dp[row][col][moveLeft];
+        // 4 options
+        int a = solveFindPaths(m, n, row + 1, col, moveLeft - 1, dp);
+        int b = solveFindPaths(m, n, row - 1, col, moveLeft - 1, dp);
+        int c = solveFindPaths(m, n, row, col + 1, moveLeft - 1, dp);
+        int d = solveFindPaths(m, n, row, col - 1, moveLeft - 1, dp);
+
+        return dp[row][col][moveLeft] = (a + b + c + d) % MOD;
+    }
+
+    public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
+        int[][][] dp = new int[m][n][maxMove + 1];
+        // initialize with -1 here.
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                for (int k = 0; k < dp[0][0].length; k++)
+                    dp[i][j][k] = -1;
+            }
+        }
+        int ans = solveFindPaths(m, n, startRow, startColumn, maxMove, dp);
+        return ans;
+
+    }
+
+    int MOD = (int) (1e9 + 7);
+
+    int f(int n, int k, int[][] dp) {
+        if (n < 0 || k < 0 || k > (n * (n - 1)) / 2)
+            return 0;
+        if (n == 1 && k == 0)
+            return 1;
+        if (dp[n][k] != -1)
+            return dp[n][k];
+        int option1 = f(n, k - 1, dp) % MOD;
+        int option2 = f(n - 1, k, dp) % MOD;
+        int option3 = f(n - 1, k - n, dp) % MOD;
+        int ans = option1;
+        ans += option2;
+        ans %= MOD;
+        ans -= option3;
+        if (ans < 0)
+            ans += MOD;
+        return dp[n][k] = ans;
+    }
+
+    public int kInversePairs(int n, int k) {
+        int[][] dp = new int[n + 1][k + 1];
+        for (int i = 0; i < dp.length; i++)
+            Arrays.fill(dp[i], -1);
+        return f(n, k, dp);
+    }
+
+    public List<List<Integer>> findWinners(int[][] matches) {
+        Map<Integer, Integer> indegree = new HashMap<>();
+        Set<Integer> players = new HashSet<>();
+        for (var match : matches) {
+            indegree.put(match[1], indegree.getOrDefault(match[1], 0) + 1);
+            players.add(match[0]);
+            players.add(match[1]);
+        }
+        List<List<Integer>> ans = new ArrayList<>();
+        ans.add(new ArrayList<>());
+        ans.add(new ArrayList<>());
+
+        // players who lost exactly 1 match
+        for (var item : indegree.entrySet()) {
+            if (item.getValue() == 1)
+                ans.get(1).add(item.getKey());
+        }
+
+        // players who didn't lose any match
+        for (var item : players) {
+            if (!indegree.containsKey(item))
+                ans.get(0).add(item);
+        }
+
+        Collections.sort(ans.get(0));
+        Collections.sort(ans.get(1));
+        return ans;
+    }
+
+    public int numSubmatrixSumTarget(int[][] matrix, int target) {
+        int N = matrix.length;
+        int M = matrix[0].length;
+        int[][] prefix = new int[N][M + 1];
+        // row wise
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                prefix[i][j + 1] = prefix[i][j] + matrix[i][j];
+            }
+        }
+//        for (int i = 0; i < prefix.length; i++) {
+//            for (int j = 0; j < prefix[0].length; j++) {
+//                System.out.print(prefix[i][j]);
+//            }
+//            System.out.println();
+//        }
+
+        int ans = 0;
+        for (int c1 = 1; c1 <= M; c1++) {
+            for (int c2 = c1; c2 <= M; c2++) {
+                Map<Integer, Integer> ps = new HashMap<>();
+                ps.put(0, 1);
+                int cummSum = 0;
+                for (int i = 0; i < N; i++) {
+                    // fix the sum for the first element.
+                    cummSum += prefix[i][c2] - prefix[i][c1 - 1];
+                    int key = cummSum - target;
+                    if (ps.containsKey(key)) {
+                        ans += ps.get(key);
+                    }
+                    ps.put(cummSum, ps.getOrDefault(cummSum, 0) + 1);
+                }
+            }
+        }
+        return ans;
     }
 }
 

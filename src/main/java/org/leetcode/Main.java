@@ -1,6 +1,7 @@
 package org.leetcode;
 
 import org.leetcode.Solution.Solution;
+import org.leetcode.Solution.Template;
 
 import java.util.List;
 
@@ -16,9 +17,25 @@ public class Main {
 //        System.out.println(res[0] + " " + res[1]);
 
         // check if nothing is possible
-        String[] ar = new String[]{"abcdefghijklmnopqrstuvwxyz"};
-        var res = s.maxLength(List.of(ar));
-        System.out.println(res);
+//        String[] ar = new String[]{"abcdefghijklmnopqrstuvwxyz"};
+//        var res = s.maxLength(List.of(ar));
+//        System.out.println(res);
+        //System.out.println(s.longestCommonSubsequence("abcde", "ace"));
+        try {
+            // System.out.println(s.findPaths(10, 30, 50, 0, 1));
+//            Template t = new Template();
+//            t.test();
+            int[][] matrix = new int[][]{
+                    {0, 1, 0, 0, 1},
+                    {0, 0, 1, 1, 1},
+                    {1, 1, 1, 0, 1},
+                    {1, 1, 0, 1, 1},
+                    {0, 1, 1, 0, 0}
+            };
+            System.out.println(s.numSubmatrixSumTarget(matrix, 1));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
 }
