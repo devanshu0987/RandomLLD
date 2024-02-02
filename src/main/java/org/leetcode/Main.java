@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] arr = new int[]{71, 55, 82, 55};
+        int[] arr = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
         // var res = s.sumSubarrayMins(arr);
         // System.out.println(res);
 
@@ -32,7 +32,10 @@ public class Main {
                     {1, 1, 0, 1, 1},
                     {0, 1, 1, 0, 0}
             };
-            System.out.println(s.numSubmatrixSumTarget(matrix, 1));
+            System.out.println(s.dailyTemperatures(arr));
+            // System.out.println(s.numSubmatrixSumTarget(matrix, 1));
+
+            System.out.println(s.numOfSubarrays(arr));
         } catch (Exception ex) {
             System.out.println(ex);
         }

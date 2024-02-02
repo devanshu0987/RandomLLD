@@ -359,5 +359,158 @@ public class Solution {
         }
         return ans;
     }
+
+    int solveOddSum(int[] arr, int index, int type, int isOdd, int[][][] dp) {
+        if (index >= arr.length) {
+            // end of the array
+            // if the sum is odd, we should count it.
+            return isOdd;
+        }
+
+        if (dp[index][type][isOdd] != -1) {
+            return dp[index][type][isOdd];
+        }
+
+        if (type == 0) {
+            int notTake = solveOddSum(arr, index + 1, 0, 0, dp);
+            int take = solveOddSum(arr, index + 1, 1, arr[index] % 2, dp);
+            return dp[index][type][isOdd] = take + notTake;
+        } else {
+            // either you end here
+            int notTake = solveOddSum(arr, arr.length, 1, isOdd, dp);
+            int take = solveOddSum(arr, index + 1, 1, (isOdd + arr[index]) % 2, dp);
+            return dp[index][type][isOdd] = take + notTake;
+        }
+    }
+
+
+    public int numOfSubarrays(int[] arr) {
+        int[][][] dp = new int[arr.length][2][2];
+        // initialize
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                Arrays.fill(dp[i][j], -1);
+            }
+        }
+        return solveOddSum(arr, 0, 0, 0, dp);
+    }
+
+    public int evalRPN(String[] tokens) {
+        Deque<Integer> stk = new ArrayDeque<>();
+        Set<String> operators = new HashSet<>();
+        operators.add("+");
+        operators.add("-");
+        operators.add("*");
+        operators.add("/");
+        for (var item : tokens) {
+            if (operators.contains(item)) {
+                int second = stk.pop();
+                int first = stk.pop();
+                int res = 0;
+                switch (item) {
+                    case "+":
+                        res = first + second;
+                        break;
+                    case "-":
+                        res = first - second;
+                        break;
+                    case "*":
+                        res = first * second;
+                        break;
+                    case "/":
+                        res = first / second;
+                        break;
+                }
+                stk.push(res);
+            } else {
+                stk.push(Integer.valueOf(item));
+            }
+        }
+        return stk.peek();
+    }
+
+    public List<Integer> sequentialDigits(int low, int high) {
+        // low to high
+        // Digit DP but possible that we can just enumerate it because we have to return actual count.
+        // 12, 23, 34, 45, 56, 67, 78, 89,
+        // x , 123, 234, 345, 456, 567, ...
+        // x , x  , 1234,
+        List<String> initialList = Arrays.asList("12", "23", "34", "45", "56", "67", "78", "89");
+        List<Integer> ans = new ArrayList<>();
+        Deque<String> q = new ArrayDeque<>(initialList);
+        while (!q.isEmpty()) {
+            String front = q.peek();
+            q.pop();
+            // see if we need to count this answer.
+            // It will not overflow or throw exception. We will test it out.
+            Integer val = Integer.parseUnsignedInt(front);
+            if (val >= low && val <= high) {
+                ans.add(val);
+            }
+            // generate the child if possible.
+            char frontChar = front.charAt(0);
+            frontChar--;
+            if (frontChar > '0' && frontChar <= '9') {
+                q.push(frontChar + front);
+            }
+        }
+        Collections.sort(ans);
+        return ans;
+    }
+
+    public int[][] divideArray(int[] nums, int k) {
+        int size = nums.length;
+        int[][] ans = new int[size / 3][size / 3];
+        Arrays.sort(nums);
+        int index = 0;
+        for (int i = 0; i < nums.length; i = i + 3) {
+            int a = nums[i];
+            int b = nums[i + 1];
+            int c = nums[i + 2];
+            // validate
+            if (Math.abs(a - b) <= k && Math.abs(b - c) <= k && Math.abs(c - a) <= k) {
+                ans[index][0] = a;
+                ans[index][1] = b;
+                ans[index][2] = c;
+                index++;
+            } else {
+                int[][] err = new int[0][0];
+                return err;
+            }
+        }
+        return ans;
+    }
+
+    int[] nextGreater(int[] arr) {
+        int[] ans = new int[arr.length];
+        Arrays.fill(ans, -1);
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 0; i < arr.length; i++) {
+
+            // while loop runs until the stack is not empty AND
+            // the element represented by stack top is STRICTLY LARGER than the current element
+            // This means, the stack will always be monotonic non decreasing (type 2)
+            while (stack.size() > 0 && arr[stack.peek()] <= arr[i]) {
+
+                int stackTop = stack.pop();
+                ans[stackTop] = i;
+            }
+
+            stack.push(i);
+        }
+        return ans;
+    }
+
+    public int[] dailyTemperatures(int[] temperatures) {
+        int[] ans = nextGreater(temperatures);
+        for(int i = 0; i < ans.length; i++) {
+            if(ans[i] == -1)
+                ans[i] = 0;
+            else {
+                ans[i] = ans[i] - i;
+            }
+        }
+        return ans;
+    }
 }
 
