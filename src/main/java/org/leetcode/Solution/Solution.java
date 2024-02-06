@@ -503,14 +503,126 @@ public class Solution {
 
     public int[] dailyTemperatures(int[] temperatures) {
         int[] ans = nextGreater(temperatures);
-        for(int i = 0; i < ans.length; i++) {
-            if(ans[i] == -1)
+        for (int i = 0; i < ans.length; i++) {
+            if (ans[i] == -1)
                 ans[i] = 0;
             else {
                 ans[i] = ans[i] - i;
             }
         }
         return ans;
+    }
+
+    public long solveMaxSum(int[] arr, int index, int k, long[] dp) {
+        if (index >= arr.length) {
+            return 0;
+        }
+
+        if (dp[index] != -1)
+            return dp[index];
+
+        // split into multiple partitions.
+        long max = arr[index];
+        long ans = 0;
+        for (int i = index; i < Math.min(arr.length, index + k); i++) {
+            max = Math.max(max, arr[i]);
+            long option = (max * (i - index + 1)) + solveMaxSum(arr, i + 1, k, dp);
+            ans = Math.max(ans, option);
+        }
+        dp[index] = ans;
+        return dp[index];
+    }
+
+    public int maxSumAfterPartitioning(int[] arr, int k) {
+        long[] dp = new long[arr.length];
+        Arrays.fill(dp, -1);
+        return (int) solveMaxSum(arr, 0, k, dp);
+    }
+
+    boolean isMatch(Map<Character, Integer> state, Map<Character, Integer> tstate) {
+        for (var item : tstate.entrySet()) {
+            if (state.containsKey(item.getKey())) {
+                if (state.get(item.getKey()) < item.getValue()) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String minWindow(String s, String t) {
+        String ans = "";
+        int minLen = Integer.MAX_VALUE;
+        int L = -1, R = -1;
+        Map<Character, Integer> state = new HashMap<>();
+        Map<Character, Integer> tstate = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            tstate.put(t.charAt(i), tstate.getOrDefault(t.charAt(i), 0) + 1);
+        }
+        int we = 0, ws = 0;
+        for (we = 0; we < s.length(); we++) {
+            // add to state.
+            state.put(s.charAt(we), state.getOrDefault(s.charAt(we), 0) + 1);
+
+            // check if all chars of t are satisfied.
+            while (isMatch(state, tstate)) {
+                // we have a potential answer.
+                if ((we - ws + 1) < minLen) {
+                    minLen = we - ws + 1;
+                    L = ws;
+                    R = we;
+                }
+                // update state.
+                state.put(s.charAt(ws), state.get(s.charAt(ws)) - 1);
+                if (state.get(s.charAt(ws)) == 0) {
+                    state.remove(s.charAt(ws));
+                }
+                ws++;
+            }
+        }
+        if (L == -1) {
+            return "";
+        }
+        return s.substring(L, R + 1);
+
+    }
+
+    public int firstUniqChar(String s) {
+        Map<Character, Integer> freq = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            freq.put(s.charAt(i), freq.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (freq.get(s.charAt(i)) == 1)
+                return i;
+        }
+        return -1;
+    }
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+        Map<String, List<String>> anagrams = new HashMap<>();
+        for (var item : strs) {
+            char[] chars = item.toCharArray();
+            Arrays.sort(chars);
+            String hash = Arrays.toString(chars);
+            if (anagrams.containsKey(hash)) {
+                var value = anagrams.get(hash);
+                value.add(item);
+                anagrams.put(hash, value);
+            } else {
+                ArrayList<String> value = new ArrayList<>();
+                value.add(item);
+                anagrams.put(hash, value);
+            }
+        }
+        for (var item : anagrams.entrySet()) {
+            res.add(item.getValue());
+        }
+        return res;
+
     }
 }
 
