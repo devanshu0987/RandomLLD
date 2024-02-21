@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc11492-8e5e-4fbc-bf77-14f5db011111" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/ArraySumTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Drop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Producer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/leetcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/leetcode/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/leetcode/Solution/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/leetcode/Solution/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,17 +64,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/devansm/source/repos/RandomLLD&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/devansm/source/repos/reference/jdk",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\devansm\source\repos\RandomLLD\src\test\java\org\cred\paymentrecommendation\service" />
@@ -83,13 +86,13 @@
       <recent name="org.jupiter.query" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.leetcode.Main" />
+  <component name="RunManager" selected="Application.org.concurrency.Main">
+    <configuration name="org.concurrency.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.concurrency.Main" />
       <module name="RandomLLD.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.leetcode.*" />
+          <option name="PATTERN" value="org.concurrency.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.concurrency.Main" />
         <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testMultipleBegin" />
         <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testKvStore" />
         <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests.testKvStoreSingleTransaction" />
         <item itemvalue="Gradle.KvStoreWithTransactionsV2Tests" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
