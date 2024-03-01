@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbc11492-8e5e-4fbc-bf77-14f5db011111" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/ArraySumTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Drop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/SimpleThreadPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/concurrency/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/concurrency/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +73,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.concurrency" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\devansm\source\repos\RandomLLD\src\test\java\org\cred\paymentrecommendation\service" />
       <recent name="C:\Users\devansm\source\repos\RandomLLD\src\main\java\org\cred" />
